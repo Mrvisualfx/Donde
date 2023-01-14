@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="res/styles.css">
+    <title>¿Donde? - Mapa</title>
+
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+
+  <script
+    src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""
+  ></script>
+
+  <script>
+    function toggleDropdown() {
+    var x = document.getElementById("filter");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+    }
+  </script>
+
+</head>
+
+
+
+<body>
+    <header>
+        <a class="logo" href="index.html"><img src="images\logo-zut.png" alt="logo"></a>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="Mapa.html">Mapa</a></li>
+                <li><a href="https://plan.zut.edu.pl">Plan</a></li>
+                <li>
+                    <a></a>
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="toggleDropdown()">Szukaj</button>
+                        <div class="dropdown-content" id="filter">
+                            <a href="Wykladowca.html">Wykładowca</a>
+                            <a href="Pomieszczenie.html">Pomieszczenie</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="Pomoc.html">Pomoc</a></li>
+            </ul>
+        </nav>
+        
+        <a href="http://free-website-translation.com/" id="ftwtranslation_button" hreflang="pl" title="" style="border:0;"><img src="http://free-website-translation.com/img/fwt_button_en.gif" id="ftwtranslation_image" alt="website translator plugin" style="border:0;"/></a>
+
+    </header>
+
+<div>
+
+<div>
+<div id="map" style="height: 300px; width: 90%;"></div>
+
+<div id="obrazki">
+    <div>
+    <button id="wi1"><img src="images\wi1.png" style="    object-fit: cover;
+        width: 160px;
+        height: 160px; margin-top: 15px;" alt="wi1"></button>
+        <h2 class="Nazwa">WI ZUT</h2>
+        <h2 class="Nazwa">Budynek 1</h2>
+        <p class="mapa">Żołnierska 49,<br>71-210 Szczecin</p>
+
+       
+
+        </div>
+
+        <div>
+    <button id="wi2"><img src="images\wi2.png" style="    object-fit: cover;
+        width: 160px;
+        height: 160px; margin-top: 15px;" alt="wi2"></button>
+                <h2 class="Nazwa">WI ZUT</h2>
+                <h2 class="Nazwa">Budynek 2</h2>
+                <p class="mapa">Żołnierska 52,<br>71-210 Szczecin</p>
+                
+        
+        </div>
+
+    <div>
+    <button id="stara_chemia"><img src="images\s_chemia.jpg" style="    object-fit: cover;
+        width: 160px;
+        height: 160px; margin-top: 15px;" alt="s_chemia"></button>
+                <h2 class="Nazwa">WTiIC ZUT</h2>
+                <h2 class="Nazwa">'Stara Chemia'</h2>
+                <p class="mapa">Kazimierza Pułaskiego 10,<br>70-322 Szczecin</p>
+                
+
+            </div>
+
+
+        <div>
+    <button id="nowa_chemia"><img src="images\nowa_chemia.jpg" style="    object-fit: cover;
+        width: 160px;
+        height: 160px; margin-top: 15px;" alt="nowa_chemia"></button>
+
+        <h2 class="Nazwa">WTiIC ZUT</h2>
+        <h2 class="Nazwa">'Nowa Chemia'</h2>
+        <p class="mapa"> aleja Piastów 42,<br>70-240 Szczecin</p>
+        
+</div>
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+    <script>
+      var map = L.map('map').setView([53.43397740568678, 14.515867855718676], 12);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      var teleportBtn1 = document.getElementById("wi1");
+      teleportBtn1.addEventListener("click", function() {
+        map.setView([53.44713433743733, 14.491931451592123], 30);
+      });
+
+      var teleportBtn2 = document.getElementById("wi2");
+      teleportBtn2.addEventListener("click", function() {
+        map.setView([53.44850727837951, 14.491264196035024], 30);
+      });
+
+      var teleportBtn3 = document.getElementById("stara_chemia");
+      teleportBtn3.addEventListener("click", function() {
+        map.setView([53.425104943278136, 14.535236914966587], 30);
+      });
+
+      var teleportBtn4 = document.getElementById("nowa_chemia");
+      teleportBtn4.addEventListener("click", function() {
+        map.setView([53.42157711888688, 14.535383695186304], 30);
+      });
+
+      const marker = L.marker([53.44713433743733, 14.491931451592123]).addTo(map)
+      const marker1 = L.marker([53.44850727837951, 14.491264196035024]).addTo(map)
+      const marker2 = L.marker([53.425104943278136, 14.535236914966587]).addTo(map)
+      const marker3 = L.marker([53.42157711888688, 14.535383695186304]).addTo(map)
+
+
+    </script>
+
+    <script type="text/javascript" src="http://free-website-translation.com/scripts/fwt.js" /></script>
+
+</body>
+<div class="footer">
+  <p>Autorzy: Oliwia Kuczńska, Klaudia Małolepsza, Krzysztof Warpachowicz, Kacper Borysewicz | Masz problem? Napisz na maila: donde.betoniarze@gmail.com</p>
+</div>
+
+</html>

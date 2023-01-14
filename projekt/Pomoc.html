@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="res/styles.css">
+
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""
+  />
+
+  <script
+    src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""
+  ></script>
+
+
+<title>¿Donde? - Pomoc</title>
+
+<script>
+    function toggleDropdown() {
+  var x = document.getElementById("filter");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+</head>
+<body>
+    <header>
+        <a class="logo" href="index.html"><img src="images\logo-zut.png" alt="logo"></a>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="Mapa.html">Mapa</a></li>
+                <li><a href="https://plan.zut.edu.pl">Plan</a></li>
+                <li>
+                    <a></a>
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="toggleDropdown()">Szukaj</button>
+                        <div class="dropdown-content" id="filter">
+                            <a href="Wykladowca.html">Wykładowca</a>
+                            <a href="Pomieszczenie.html">Pomieszczenie</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="Pomoc.html">Pomoc</a></li>
+            </ul>
+        </nav>
+        
+        <a href="http://free-website-translation.com/" id="ftwtranslation_button" hreflang="pl" title="" style="border:0;"><img src="http://free-website-translation.com/img/fwt_button_en.gif" id="ftwtranslation_image" alt="website translator plugin" style="border:0;"/></a>
+
+    </header>
+    <div class="main_div">
+<h1>Pomoc</h1>
+
+<p>Autorzy:
+  <ul>
+    <li class="wp">Oliwia Kuczńska</li>
+    <li class="wp">Klaudia Małolepsza</li>
+    <li class="wp">Krzysztof Warpachowicz</li>
+    <li class="wp">Kacper Borysewicz</li>
+  </ul>
+</p>
+
+<p>Masz problem? <br> 
+Napisz na maila: donde.betoniarze@gmail.com<br>
+</p>
+
+<p>Możesz nas również znaleźć na wydziaale informatyki.<br>
+jesteśmy tam cały czas ;)</p>
+
+
+</div>
+<script type="text/javascript" src="http://free-website-translation.com/scripts/fwt.js" /></script>
+
+</body>
+<div class="footer">
+  <p>Autorzy: Oliwia Kuczńska, Klaudia Małolepsza, Krzysztof Warpachowicz, Kacper Borysewicz | Masz problem? Napisz na maila: donde.betoniarze@gmail.com</p>
+</div>
+
+</html>
